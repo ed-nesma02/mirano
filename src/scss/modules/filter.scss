@@ -1,0 +1,32 @@
+@use '../_variables.scss' as *;
+
+.filter{
+  padding: 30px 0;
+  &__fieldset{
+    border: none;
+  }
+  &__radio {
+    position: absolute;
+    appearance: none;
+  }
+  &__label {
+    padding: 24.5px 16px 24.5px 60px;
+    border-radius: 300px;
+    display: inline-block;
+    cursor: pointer;
+    background-color: $white;
+    transition: background-color .2s ease-in-out;
+  }
+  &__label:hover {
+    background-color: $orange;
+  }
+  
+  &__radio:focus +  &__label {
+    background-color: $orange;
+  }
+  
+  &__radio:checked + &__label {
+    background-color: $light-orange;
+    color: $white;
+  }
+}
