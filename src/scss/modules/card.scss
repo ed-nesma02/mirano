@@ -1,0 +1,55 @@
+@use '../_variables.scss' as *;
+.card {
+  overflow: hidden;
+  border-radius: 32px;
+  background-color: $white;
+  min-height: 531px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__image {
+    width: 100%;
+    height: 411px;
+    object-fit: cover;
+  }
+
+  &__content {
+    padding: 24px 16px;
+    flex-grow: 1;
+    display: grid;
+    grid-template-rows: 1fr min-content;
+    grid-template-columns: max-content 1fr;
+    gap: 16px 30px;
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 18px;
+    align-self: start;
+    grid-column: 1 / -1;
+  }
+
+  &__date-delivery {
+    padding-left: 20px;
+    background-image: url('/img/delivery.svg');
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    font-size: 14px;
+    align-self: center;
+  }
+
+  &__btn {
+    background: $light-orange;
+    border-radius: 32px;
+    padding: 8px 16px;
+    color: $white;
+  }
+
+  &__price {
+  }
+
+  &__btn-text {
+    display: none;
+  }
+}
