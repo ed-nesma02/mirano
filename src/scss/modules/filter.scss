@@ -1,12 +1,18 @@
 @use '../_variables.scss' as *;
+@use '../media' as *;
 
 .filter{
   padding: 30px 0;
+  @include tablet{
+    padding: 20px 0;
+  }
   &__container{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 30px;
+    gap: 32px;
+    flex-wrap: wrap;
+
   }
   &__group{
     display: flex;
@@ -16,6 +22,10 @@
     gap: 12px;
     &_choices{
       gap: 64px;
+
+      @include mobile {
+        gap: 40px;
+      }
     }
   }
   &__radio {
@@ -23,7 +33,7 @@
     appearance: none;
   }
   &__label {
-    padding: 24.5px 16px 24.5px 60px;
+    padding: 24px 16px 24px 60px;
     border-radius: 300px;
     display: inline-block;
     cursor: pointer;
@@ -33,6 +43,14 @@
     background-repeat: no-repeat;
     background-position: center left 16px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+
+    @include mobile{
+      padding: 11px 12px 11px 40px;
+      background-position: center left 12px;
+      background-size: 24px;
+    }
   }
   &__label:hover {
     background-color: $orange;
@@ -59,17 +77,50 @@
       background: url(/img/arrow.svg) no-repeat center/contain;
     }
   }
-
-  &__input-price {
+  &__price{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    max-width: 300px;
+    padding: 24px;
+    border: none;
+    border-radius: 12px;
+    background-color: $white;
   }
 
+  &__input-price {
+    border: none;
+    width: 100%;
+    background: $bg;
+  }
+  &__label-price{
+    border-radius: 32px;
+    padding: 8px 16px;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    max-width: 110px;
+    background: $bg;
+  }
   &__type-list {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 8px;
+    border-radius: 12px;
+    background: $white;
   }
 
   &__type-item {
   }
 
   &__type-btn {
+    text-align: start;
+    transition: color .2s ease-in-out;
+    &:hover{
+      color: $orange;
+    }
   }
 }
 

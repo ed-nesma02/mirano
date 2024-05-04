@@ -67,16 +67,20 @@
           <fieldset class="filter__group filter__group_choices">
             <div class="filter__choices choices">
               <button class="filter__select choices__btn">Цена</button>
-              <div class="choices__box">
-                <fieldset class="filter__group">
-                  <input type="text" class="filter__input-price" placeholder="от">
-                  <input type="text" class="filter__input-price" placeholder="до">  
+              <div class="choices__box filter__choices-box">
+                <fieldset class="filter__price">
+                  <label type="text" class="filter__label-price">от
+                    <input type="text" class="filter__input-price">
+                  </label>
+                  <label type="text" class="filter__label-price">до
+                    <input type="text" class="filter__input-price">
+                  </label>
                 </fieldset>
               </div>
             </div>
             <div class="filter__choices choices">
               <button class="filter__select choices__btn">Тип товара</button>
-              <div class="choices__box">
+              <div class="choices__box filter__choices-box">
                 <ul class="filter__type-list">
                   <li class="filter__type-item">
                     <button class="filter__type-btn">Монобукеты</button>
@@ -186,7 +190,7 @@
       </section>
       <section class="newsletter">
         <div class="container">
-          <h3 class="newsletter__text">Подпишись на рассылку</h3>
+          <h3 class="newsletter__text">Подпишись на&nbsp;рассылку</h3>
           <form action="" class="newsletter__form">
             <input class="newsletter__input" type="text" name="subscribe" placeholder="E-mail">
             <button class="newsletter__subscribe-btn">

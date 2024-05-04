@@ -1,19 +1,41 @@
 @use '../_variables.scss' as *;
+@use '../media' as *;
+
 .header {
   padding: 32px 0;
+  @include mobile {
+    padding: 24px 0;
+  }
   &__container {
     display: grid;
     align-items: center;
-   justify-content: space-between; 
-   gap: 30px;
-   grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    gap: 32px;
+    grid-template-columns: repeat(3, 1fr);
+
+    @include tablet {
+      grid-template-areas: '. logo cart' 'form form form';
+    }
+
+    @include mobile {
+      gap: 24px;
+      grid-template-areas: 'logo logo cart' 'form form form';
+    }
   }
-  
+
   &__form {
     position: relative;
     max-width: 420px;
     width: 100%;
     height: 40px;
+
+    @include laptop {
+      max-width: 302px;
+      max-width: 100%;
+    }
+    @include tablet {
+      grid-area: form;
+    }
   }
 
   &__input {
@@ -22,10 +44,10 @@
     border-radius: 32px;
     padding: 8px 56px 8px 16px;
     border: none;
-    &:placeholder{
+    &:placeholder {
       color: rgba($dark, 0.3);
     }
-    &::-webkit-search-cancel-button{
+    &::-webkit-search-cancel-button {
       display: none;
     }
   }
@@ -46,6 +68,15 @@
 
   &__logo {
     justify-self: center;
+    width: 200px;
+    @include tablet {
+      grid-area: logo;
+    }
+
+    @include mobile {
+      width: 140px;
+      justify-self: start;
+    }
   }
 
   &__cart-btn {
@@ -59,5 +90,9 @@
     line-height: 1.3;
     color: $orange;
     justify-self: end;
+
+    @include tablet {
+      grid-area: cart;
+    }
   }
 }

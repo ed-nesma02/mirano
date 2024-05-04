@@ -1,4 +1,6 @@
 @use '../_variables.scss' as *;
+@use '../_media.scss' as *;
+
 .card {
   overflow: hidden;
   border-radius: 32px;
@@ -7,11 +9,20 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  
+  @include mobile {
+    min-height: 380px;
+    border-radius: 20px;
+  }
 
   &__image {
     width: 100%;
     height: 411px;
     object-fit: cover;
+
+    @include mobile{
+      height: 180px;
+    }
   }
 
   &__content {
@@ -21,11 +32,15 @@
     grid-template-rows: 1fr min-content;
     grid-template-columns: max-content 1fr;
     gap: 16px 30px;
+
+    @include mobile{
+      padding: 16px 12px;
+      grid-template-columns:unset;
+    }
   }
 
   &__title {
     font-weight: 400;
-    font-size: 18px;
     align-self: start;
     grid-column: 1 / -1;
   }
@@ -37,6 +52,10 @@
     background-position: left bottom;
     font-size: 14px;
     align-self: center;
+
+    @include mobile{
+      font-size: 12px;
+    }
   }
 
   &__btn {
