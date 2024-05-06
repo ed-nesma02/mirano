@@ -1,10 +1,26 @@
 @use '../_variables.scss' as *;
 @use '../media' as *;
 
+@keyframes slideDown {
+  to {
+    top: 0;
+  }
+}
+
 .header {
   padding: 32px 0;
   @include mobile {
     padding: 24px 0;
+  }
+  &_fixed{
+    position: fixed;
+    top: -100%;
+    left: 0;
+    right: 0;
+    z-index: 998;
+    box-shadow: -1px -1px 15px 0px rgba($dark, 0.3);
+    background-color: $white;
+    animation: slideDown .3s forwards;
   }
   &__container {
     display: grid;

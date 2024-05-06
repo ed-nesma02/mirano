@@ -6,6 +6,11 @@
   @include tablet{
     padding: 20px 0 50px;
   }
+  &__container {
+    display: flex;
+    align-items: start;
+    gap: 20px;
+  }
   &__title {
     font-family: $second-family;
     font-weight: 400;

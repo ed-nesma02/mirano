@@ -1,12 +1,16 @@
 @use '../_variables.scss' as *;
 
 .choices {
-
   &__btn {
-
+    &_open::after{
+      transform: scale(-1);
+    }
   }
 
   &__box {
-    display:  none;
+    display: none;
+    &_open {
+      display: block;
+    }
   }
 }
