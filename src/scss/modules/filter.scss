@@ -127,8 +127,11 @@
   &__type-btn {
     text-align: start;
     white-space: nowrap;
-    transition: color .2s ease-in-out;
+    transition: color .1s ease-in-out;
     &:hover{
+      color: $light-orange;
+    }
+    &_active {
       color: $orange;
     }
   }

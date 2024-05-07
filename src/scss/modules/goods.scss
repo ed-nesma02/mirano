@@ -8,8 +8,12 @@
   }
   &__container {
     display: flex;
+    justify-content: center;
     align-items: start;
     gap: 20px;
+    @media (max-width: 1360px) {
+      display: block;
+    }
   }
   &__title {
     font-family: $second-family;

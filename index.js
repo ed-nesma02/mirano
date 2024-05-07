@@ -66,3 +66,15 @@ choices.forEach((choice) => {
     adjustElementPosition(box);
   });
 });
+
+const headerCartBtn = document.querySelector('.header__cart-btn');
+const cartClose = document.querySelector('.cart__close');
+const cart = document.querySelector('.cart');
+
+headerCartBtn.addEventListener('click', () => {
+  cart.classList.toggle('cart_open')
+})
+
+cartClose.addEventListener('click', () => {
+  cart.classList.remove('cart_open')
+})
