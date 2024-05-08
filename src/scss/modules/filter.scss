@@ -6,7 +6,7 @@
   @include tablet{
     padding: 20px 0;
   }
-  &__container{
+  &__form{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -101,6 +101,8 @@
     width: 100%;
     min-width: 50px;
     background: $bg;
+    background-color: transparent;
+    outline: 1px solid transparent;
   }
   &__label-price{
     border-radius: 32px;
