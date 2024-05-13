@@ -1,27 +1,18 @@
 import {store} from './Store';
+import {ListType} from './ListType';
 
 export const initChoicesType = () => {
   const typeChoices = document.querySelector('.filter__choices_type');
 
   const updateTypeChoicesVisibility = () => {
     const categories = store.getCategories();
+    const choicesBox = document.querySelector('.filter__choices-box-btn');
 
     if (categories.size) {
       typeChoices.style.display = '';
-      const typeList = document.querySelector('.filter__type-list');
-      typeList.innerHTML = '';
-
-      categories.forEach((category) => {
-        const typeItem = document.createElement('li');
-        typeItem.classList.add('filter__type-item');
-        const typeBtn = document.createElement('button');
-        typeBtn.classList.add('filter__type-btn');
-        typeBtn.type = 'button';
-        typeBtn.textContent = category;
-
-        typeItem.append(typeBtn);
-        typeList.append(typeItem);
-      });
+      choicesBox.textContent = '';
+      const typeList = ListType([...categories]);
+      choicesBox.append(typeList);
     } else {
       typeChoices.style.display = 'none';
     }

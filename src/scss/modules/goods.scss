@@ -44,4 +44,11 @@
       column-gap: 12px;
     }
   }
+
+  &__no-products{
+    text-align: center;
+    font-size: 24px;
+    color: $dark;
+    grid-column: 1 / -1;
+  }
 }

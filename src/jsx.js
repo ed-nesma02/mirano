@@ -1,9 +1,8 @@
 const jsx = (tag, attributes = {}, ...children) => {
-  
   if (typeof tag === 'function') {
     return tag(attributes, ...children);
   }
-  
+
   const element = document.createElement(tag);
 
   Object.entries(attributes).forEach(([key, value]) => {
@@ -17,10 +16,12 @@ const jsx = (tag, attributes = {}, ...children) => {
       element.setAttribute(key, value);
     }
   });
-  
+
   children.forEach((child) => {
     if (typeof child === 'string' || typeof child === 'number') {
       element.append(document.createTextNode(child.toString()));
+    } else if (Array.isArray(child)) {
+      child.forEach((innerChild) => element.append(innerChild));
     } else {
       element.append(child);
     }

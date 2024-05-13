@@ -5,7 +5,8 @@ import {initCart} from '@/scripts/cart';
 import {renderProducts} from '@/scripts/renderProducts';
 import {fetchProducts} from '@/scripts/API';
 import {initChoicesType} from '@/scripts/choicesType';
-import {filterProducts} from './scripts/filterProducts';
+import {filterProducts} from '@/scripts/filterProducts';
+import { initSearchProducts } from '@/scripts/searchProducts';
 
 const init = () => {
   initHeaderFixer();
@@ -15,6 +16,7 @@ const init = () => {
   fetchProducts({type: 'bouquets'});
   renderProducts();
   filterProducts();
+  initSearchProducts();
 };
 
 document.addEventListener('DOMContentLoaded', init);
