@@ -54,9 +54,6 @@
     color: $dark;
   }
 
-  &__close {
-  }
-
   &__date-delivery {
     padding-left: 20px;
     margin-bottom: 16px;
@@ -142,5 +139,13 @@
     background: $light-orange;
     font-weight: 400;
     color: $white;
+    transition: background .2s ease-in-out;
+    &:hover, &:focus{
+      background: $orange;
+    }
+    &:disabled{
+      background: $light-orange;
+      opacity: 0.4;
+    }
   }
 }

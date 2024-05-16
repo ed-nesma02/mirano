@@ -1,4 +1,4 @@
-import {store} from './Store';
+import {productStore} from './Store';
 
 const formatQueryString = (params) => {
   if (Object.keys(params).length === 0) {
@@ -25,7 +25,7 @@ export const fetchProducts = async (params = {}) => {
     }
     const products = await response.json();
 
-    store.setProducts(products);
+    productStore.setProducts(products);
   } catch (error) {
     console.error(`Ошибка при получении данных: ${error}`);
     return [];

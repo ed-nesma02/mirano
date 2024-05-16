@@ -109,40 +109,10 @@
               </div>
               <p class="cart__date-delivery">сегодня в 14:00</p>
               <ul class="cart__list">
-                <li class="cart__item">
-                  <img src="/img/01.jpg" alt="Авторский букет из роз, диантусов и сухоцветов" class="cart__img">
-                  <h4 class="cart__item-title">Авторский букет из роз, диантусов и сухоцветов</h4>
-                  <div class="cart__counter">
-                    <button class="cart__counter-btn">+</button>
-                    <input type="number" value="1" class="cart__counter-input" max="99">
-                    <button class="cart__counter-btn">-</button>
-                  </div>
-                  <p class="cart__price">3000&nbsp;₽</p>
-                </li>
-                <li class="cart__item">
-                  <img src="/img/01.jpg" alt="Авторский букет из роз, диантусов и сухоцветов" class="cart__img">
-                  <h4 class="cart__item-title">Авторский букет из роз, диантусов и сухоцветов</h4>
-                  <div class="cart__counter">
-                    <button class="cart__counter-btn">+</button>
-                    <input type="number" value="1" class="cart__counter-input" max="99">
-                    <button class="cart__counter-btn">-</button>
-                  </div>
-                  <p class="cart__price">3000&nbsp;₽</p>
-                </li>
-                <li class="cart__item">
-                  <img src="/img/01.jpg" alt="Авторский букет из роз, диантусов и сухоцветов" class="cart__img">
-                  <h4 class="cart__item-title">Авторский букет из роз, диантусов и сухоцветов</h4>
-                  <div class="cart__counter">
-                    <button class="cart__counter-btn">+</button>
-                    <input type="number" value="1" class="cart__counter-input" max="99">
-                    <button class="cart__counter-btn">-</button>
-                  </div>
-                  <p class="cart__price">3000&nbsp;₽</p>
-                </li>
               </ul>
               <div class="cart__footer">
                 <button class="cart__order">Оформить</button>
-                <p class="cart__price">3000&nbsp;₽</p>
+                <p class="cart__price cart__price_total"></p>
               </div>
             </div>
           </section>
@@ -206,5 +176,66 @@
         <p class="footer__coyright">©MIRANO, 2024</p>
       </div>
     </footer>
+
+    <div class="modal modal_order visually-hidden">
+      <div class="modal__main modal__main_order">
+        <form class="order">
+          <h2 class="order__title">Оформить заказ</h2>
+          <div class="order__info">
+            <div class="order__customer order__group">
+              <p class="order__subtitle">Данные заказчика</p>
+              <input type="text" name="name-customer" class="order__input" placeholder="Имя">
+              <input type="text" name="phone-customer" class="order__input" placeholder="Телефон">
+            </div>
+            <div class="order__recipient order__group">
+              <p class="order__subtitle order-recipient__title">Данные получателя</p>
+              <input type="text" name="name-order" class="order__input" placeholder="Имя">
+              <input type="text" name="phone-order" class="order__input" placeholder="Телефон">
+            </div>
+            <div class="order__address order__group">
+              <p class="order__subtitle">Адрес</p>
+              <input type="text" name="street" class="order__input" placeholder="Улица">
+              <div class="order__wrapper">
+                <input type="text" name="houses" class="order__input" placeholder="Дом">
+                <input type="text" name="apartment" class="order__input" placeholder="Квартира">
+              </div>
+            </div>
+            <div class="order__option">
+              <label for="order-payment" class="order__payment_label">
+                <input type="radio" name="order-payment" class="order__payment_input" checked>
+                Оплата онлайн
+              </label>
+              <div class="order__delivery delivery">
+                <div class="delivery__date">
+                  <label for="date" class="delivery__label">Доставка</label>
+                  <select class="delivery__select" name="date" >
+                    <option value="16.05">16.05</option>
+                    <option value="16.05">17.05</option>
+                    <option value="16.05">18.05</option>
+                  </select>
+                </div>
+                <div class="delivery__time">
+                  <select class="delivery__select" name="time" >
+                    <option value="9-12">С 9:00 до 12:00</option>
+                    <option value="14-16">С 14:00 до 16:00</option>
+                    <option value="18-20">С 18:00 до 20:00</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="order__footer">
+            <p class="order__price order__price_total">9000&nbsp;₽</p>
+            <button class="order__btn-order">Заказать</button>
+          </div>
+        </form>
+        <button class="modal__close">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="5" y="5.70715" width="1" height="25" transform="rotate(-45 5 5.70715)" fill="#D17D2F"/>
+            <rect x="22.6777" y="5" width="1" height="25" transform="rotate(45 22.6777 5)" fill="#D17D2F"/>
+          </svg>                    
+        </button>
+      </div>
+    </div>
   </body>
 </html>

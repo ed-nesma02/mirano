@@ -7,6 +7,7 @@ import {fetchProducts} from '@/scripts/API';
 import {initChoicesType} from '@/scripts/choicesType';
 import {filterProducts} from '@/scripts/filterProducts';
 import { initSearchProducts } from '@/scripts/searchProducts';
+import { modalInit } from '@/scripts/modal';
 
 const init = () => {
   initHeaderFixer();
@@ -16,6 +17,7 @@ const init = () => {
   fetchProducts({type: 'bouquets'});
   renderProducts();
   filterProducts();
+  modalInit();
   initSearchProducts();
 };
 
